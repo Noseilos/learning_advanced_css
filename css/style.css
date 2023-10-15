@@ -1,0 +1,32 @@
+/*
+Pallete:
+Navy: #053B50
+Blue: #176B87
+Teal: #64CCC5
+Gray: #EEEEEE
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Orbitron:wght@500&family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, #64ccc5e9, #176b87e9), url('../images/sungjinwoo.png');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
