@@ -1,0 +1,186 @@
+/*
+Pallete:
+Navy: #053B50
+Blue: #176B87
+Teal: #64CCC5
+Gray: #EEEEEE
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Orbitron:wght@500&family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@700&display=swap');
+
+$color-primary: #176B87;
+$color-primary-light: #64CCC5;
+$color-primary-dark: #053B50;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.9), 
+        rgba($color-primary-dark, 0.9)
+        ), url('../images/sungjinwoo.png');
+    background-size: cover;
+    background-position: top;
+    border-radius: 5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    position: relative;
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo {
+    height: 3.5rem;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+
+    backface-visibility: hidden;
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 2.5rem;
+
+    animation: 1s moveInLeft ease-in;
+    
+    /* 
+    animation-delay: 3s; 
+    animation-iteration-count: 2;
+    */
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: .49rem;
+
+    animation: moveInRight 1s ease-in;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-8rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(8rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn:link, 
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+}
+
+.btn:active {
+    transform: translateY(-.15rem);
+}
+
+.btn--white {
+    background-color: white;
+    color: $color-grey-dark;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border-radius: 10rem;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .18s;
+}
+
+.btn--white::after {
+    background-color: $color-white;
+}
+
+.btn:hover::after {
+    transform: scaleX(2) scaleY(1);
+    opacity: 0;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn--animate {
+    animation: moveUp 1s 0.75s;
+    animation-fill-mode: backwards;
+}
