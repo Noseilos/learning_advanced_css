@@ -31,6 +31,22 @@
           $color-seconday-dark
         );
       }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-quaternary-light,
+          $color-quaternary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
     }
   }
 
@@ -49,6 +65,8 @@
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
     &--1 {
       background-image: linear-gradient(
@@ -59,11 +77,19 @@
     }
     
     &--2 {
-      background-image: url('../images/nato.png');
+      background-image: linear-gradient(
+          to right bottom,
+          $color-quaternary-light,
+          $color-quaternary-dark
+        ), url('../images/aot.png');
     }
     
     &--3 {
-      background-image: url('../images/aot.png');
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ), url('../images/nato.png');
     }
   }
   
@@ -87,6 +113,14 @@
     &--1 {
       background-image: linear-gradient(to right bottom, rgba($color-seconday-light, .8), rgba($color-seconday-dark, .8));
     }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($color-quaternary-light, .8), rgba($color-quaternary-dark, .8));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8));
+    }
   }
 
   &__details {
@@ -107,5 +141,32 @@
         }
       }
     }
+  }
+  
+  // FRONTSIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+  
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+
   }
 }
